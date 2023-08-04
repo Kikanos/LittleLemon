@@ -7,6 +7,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 #from rest_framework.decorators import api_view
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import permissions
+from rest_framework.decorators import permission_classes
 
 # Create your views here.
 def index(request):
@@ -14,6 +15,7 @@ def index(request):
 
 
 class MenuItemView(ListCreateAPIView):
+    permission_classes = [permissions.IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 

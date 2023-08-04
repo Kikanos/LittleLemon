@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Restaurant',
     'rest_framework',
     'djoser',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -143,6 +144,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         #any other authentication classes
-    ],
+    ]
     # Other REST framework settings...
 }

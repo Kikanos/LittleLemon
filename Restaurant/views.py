@@ -13,6 +13,9 @@ from rest_framework.decorators import permission_classes
 def index(request):
     return render(request, 'index.html', {})
 
+def about(request):
+    return render(request, 'about.html')
+
 
 class MenuItemView(ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -29,16 +32,3 @@ class BookingViewSet(ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
     permission_classes = [permissions.IsAuthenticated]
-
-
-#class Bookingview(APIView):
-#    def get(request):
-#        items = Booking.objects.all()
-#        serializer = BookingSerializer(items, many=True )
-#        return Response (serializer.data)
-    
-#def Menuview(self, request):
-#    serializer = menuSerializer(data=request.data)
-#    if serializer.is_valid():
-#        serializer.save()
-#        return Response({"status" : "success"  , "data" : "serializer.data"})
